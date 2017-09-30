@@ -1,4 +1,4 @@
-################################################################################################
+/*##############################################################################################
 #                                                                                              #
 #     #############       #############       #############       ####                ####     #
 #    #             #     #             #     #             #     #    #              #    #    #
@@ -34,5 +34,19 @@
 #   You should have received a copy of the GNU General Public License                          #
 #   along with ASALI. If not, see <http://www.gnu.org/licenses/>.                              #
 #                                                                                              #
-################################################################################################
+##############################################################################################*/
 
+#include "Kila.h"
+
+int main(int argc, char *argv[])
+{
+  Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv, "ASALI.KILA");
+  
+  
+  Cantera::ThermoPhase*  thermo(Cantera::newPhase("database/data.cti","gas"));
+  Cantera::Transport*    transport(Cantera::newDefaultTransportMgr(thermo));
+
+  ASALI::Kila kila(thermo,transport);
+
+  return app->run(kila);
+}

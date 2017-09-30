@@ -1,4 +1,4 @@
-################################################################################################
+/*##############################################################################################
 #                                                                                              #
 #     #############       #############       #############       ####                ####     #
 #    #             #     #             #     #             #     #    #              #    #    #
@@ -34,5 +34,54 @@
 #   You should have received a copy of the GNU General Public License                          #
 #   along with ASALI. If not, see <http://www.gnu.org/licenses/>.                              #
 #                                                                                              #
-################################################################################################
+##############################################################################################*/
 
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+#include <ctime>
+#include <sstream>
+#include <fstream>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+#include <limits>
+#include <cfloat>
+#include <Eigen/Dense>
+
+namespace ASALI
+{
+    class odeSolver
+    {
+        public:
+            odeSolver();
+
+            void setInitialConditions(const std::vector<double> y,const double t);
+
+            void solve(std::vector<double> &yEnd,const double tEnd);
+
+            virtual void equations(std::vector<double> &dy, const std::vector<double> y,const double t) = 0;
+            
+            virtual void print(std::vector<double> &dy, const std::vector<double> y,const double t) = 0;
+
+            virtual ~odeSolver();
+
+        protected:
+
+            unsigned int nEquations() {return NE_;};
+
+        private:
+        
+
+            double eigenValue(const std::vector<double> y);
+       
+            double  t_;
+            double  h_;
+
+            unsigned int NE_;
+            
+            std::vector<double> y_;
+            std::vector<double> dy_;
+    };
+}
