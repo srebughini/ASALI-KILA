@@ -62,6 +62,7 @@ namespace ASALI
       runButton_("Run"),
       startButton_("Start"),
       loadKineticButton_("Load kinetic"),
+      helpButton_("Available species"),
       cpBox_(Gtk::ORIENTATION_VERTICAL),
       sBox_(Gtk::ORIENTATION_VERTICAL),
       hBox_(Gtk::ORIENTATION_VERTICAL),
@@ -107,6 +108,9 @@ namespace ASALI
         
         canteraInterface_ = new ASALI::canteraInterface(thermo_,transport_);
         
+        speciesNames_     = new ASALI::speciesPopup();
+        
+
         exitButton_.resize(9);
         backButton_.resize(9);
         nextButton_.resize(9);
@@ -156,7 +160,6 @@ namespace ASALI
         exitButtonBox_.pack_start(*exitButton_[0], Gtk::PACK_SHRINK);
 
         this->show_all_children();
-        
 
         //Menu
         {
@@ -243,6 +246,10 @@ namespace ASALI
                     fractionEntry_[i]->set_text("1");
                 }
             }
+
+            //Add help button
+            inputGrid_.attach(helpButton_,1,13,1,1);
+            helpButton_.signal_clicked().connect(sigc::mem_fun(*this,&Kila::availableSpecies));
 
             //Add back button
             inputGrid_.attach(*backButton_[0],0,13,1,1);
@@ -1847,7 +1854,10 @@ namespace ASALI
                 }
             }
 
-            n_.push_back("mix");
+            if ( n_.size() > 1 )
+            {
+                n_.push_back("mix");
+            }
 
             cp_.clear();
             h_.clear();
@@ -1950,7 +1960,10 @@ namespace ASALI
                 }
             }
 
-            n_.push_back("mix");
+            if ( n_.size() > 1 )
+            {
+                n_.push_back("mix");
+            }
 
             mu_.clear();
             cond_.clear();
@@ -2066,7 +2079,11 @@ namespace ASALI
                 }
             }
 
-            n_.push_back("mix");
+            if ( n_.size() > 1 )
+            {
+                n_.push_back("mix");
+            }
+
             MW_.clear();
             MW_.resize(n_.size());
 
@@ -3459,4 +3476,10 @@ namespace ASALI
         }
         return check;
     }
+
+    void Kila::availableSpecies()
+    {
+        speciesNames_->show();
+    }
+
 }

@@ -38,9 +38,9 @@
 
 void ConvertsToMeter(double &v, std::string m)
 {
-	m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
+    m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
-	m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
+    m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
     if (m == "m")
         v=v;
@@ -63,7 +63,7 @@ void ConvertsToMeter(double &v, std::string m)
 
 void ConvertsToKg(double &v, std::string m)
 {
-	m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
+    m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
     if (m == "Kg")
         v=v;
@@ -76,7 +76,7 @@ void ConvertsToKg(double &v, std::string m)
 
 void ConvertsToSecond(double &v, std::string m)
 {
-	m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
+    m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
     if (m == "s")
         v=v;
@@ -95,7 +95,7 @@ void ConvertsToSecond(double &v, std::string m)
 
 void ConvertsToPascal(double &v, std::string m)
 {
-	m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
+    m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
     if (m == "Pa")
         v=v;
@@ -120,7 +120,7 @@ void ConvertsToPascal(double &v, std::string m)
 
 void ConvertsToKelvin(double &v, std::string m)
 {
-	m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
+    m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
     if (m == "K")
         v=v;

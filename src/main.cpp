@@ -41,8 +41,7 @@
 int main(int argc, char *argv[])
 {
   Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv, "ASALI.KILA");
-  
-  
+
   Cantera::ThermoPhase*  thermo(Cantera::newPhase("database/data.cti","gas"));
   Cantera::Transport*    transport(Cantera::newDefaultTransportMgr(thermo));
 

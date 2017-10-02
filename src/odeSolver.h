@@ -36,6 +36,9 @@
 #                                                                                              #
 ##############################################################################################*/
 
+#ifndef ODESOLVER_H
+#define ODESOLVER_H
+
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -85,3 +88,5 @@ namespace ASALI
             std::vector<double> dy_;
     };
 }
+
+#endif

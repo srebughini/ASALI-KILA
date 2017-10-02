@@ -50,6 +50,7 @@
 #include <limits>
 #include "IdealReactors.h"
 #include "canteraInterface.h"
+#include "speciesPopup.h"
 
 namespace ASALI
 {
@@ -102,6 +103,7 @@ namespace ASALI
             void changeCursor();
             void saveKineticInput();
             void loadKineticInput();
+            void availableSpecies();
             bool menu(GdkEventButton*);
 
             
@@ -128,6 +130,7 @@ namespace ASALI
             Gtk::Button       runButton_;
             Gtk::Button       startButton_;
             Gtk::Button       loadKineticButton_;
+            Gtk::Button       helpButton_;
 
             Gtk::Box          menuBox_;
             Gtk::Box          transportBox_;
@@ -281,6 +284,7 @@ namespace ASALI
             std::vector<std::vector<double> > diff_;
             
             std::vector<std::string> n_;
+           
             
             std::string window_;
             
@@ -293,6 +297,7 @@ namespace ASALI
             Cantera::ThermoPhase        *thermo_;
             Cantera::Transport          *transport_;
             ASALI::canteraInterface     *canteraInterface_;
+            ASALI::speciesPopup         *speciesNames_;
 
             unsigned int specieIndex(const std::string n, const std::vector<std::string> v);
             bool         reactionInputCheck(bool test);
