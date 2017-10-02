@@ -1,4 +1,5 @@
-# ASALI-KILA
+![logo](https://github.com/srebughini/ASALI-KILA/blob/master/images/Logo.png)
+
 ASALI is an open-source software for solving gas thermodynamic and transport properties, catalytic reactors and chemical equilibrium calculations.
 
 ## 1. How to install ASALI-KILA
