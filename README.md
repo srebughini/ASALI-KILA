@@ -26,6 +26,8 @@ To install ASALI-KILA modify the make file as follow:
 
 Once you have changed the environmental variables, run the following command:
 
+<code>sudo apt-get install libgtkmm-3.0-dev</code>
+
 <code>./make.sh</code>
 
 and type:
