@@ -24,13 +24,11 @@ To install ASALI-KILA modify the make file as follow:
 * change the environmental variable **EIGEN** with the path of your EIGEN libraries.
   * E.g. <code>export EIGEN=$HOME/my/eigen/libraries</code>
 
-Once you have changed the environmental variables, run the following command:
+Once you have changed the environmental variables, run the following commands:
 
 <code>sudo apt-get install libgtkmm-3.0-dev</code>
 
 <code>./make.sh</code>
-
-and type:
 
 <code>sudo ln -s $HOME/your/asali/folder/Asali-Kila /usr/bin/Asali-Kila</code>
 
