@@ -2717,7 +2717,7 @@ namespace ASALI
                     }
 
                     canteraInterface_->setTemperature(T_);
-                    canteraInterface_->setTemperature(p_);
+                    canteraInterface_->setPressure(p_);
                     canteraInterface_->setMoleFraction(mole,n_);
 
                     for (unsigned int j=0;j<n_.size();j++)
