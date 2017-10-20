@@ -56,7 +56,7 @@ void ConvertsToMeter(double &v, std::string m)
         v*=1e-09;
     else if(m == "pm")
         v*=1e-09;
-    else if(m == "Km")
+    else if(m == "km")
         v*=1000.;
 }
 
@@ -65,7 +65,7 @@ void ConvertsToKg(double &v, std::string m)
 {
     m.erase(std::remove(m.begin(), m.end(), ' '), m.end());
 
-    if (m == "Kg")
+    if (m == "kg")
         v=v;
     else if(m == "g")
         v*=1.e-03;
