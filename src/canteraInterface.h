@@ -68,10 +68,11 @@ namespace ASALI
             void thermoCalculate();
             void transportCalculate();
             void equilibriumCalculate(std::string type);
+            void convertToCaption(std::string& n);
             
             double Temperature();
             
-            std::vector<int>  checkNames(const std::vector<std::string> name);
+            std::vector<int>  checkNames(std::vector<std::string>& name);
             
             
             inline std::vector<double> h()                      {return h_;};
@@ -115,6 +116,10 @@ namespace ASALI
             std::vector<std::vector<double> > diff_;
             
             std::vector<std::string> n_;
+            
+            
+            std::vector<std::string> small;
+            std::vector<std::string> big;
 
     };
 }

@@ -2981,6 +2981,7 @@ namespace ASALI
             for (unsigned int j=0;j<4;j++)
             {
                 std::string name = reactionEntry_[i][j]->get_text().c_str();
+                canteraInterface_->convertToCaption(name);
                 if ( !name.empty() )
                 {
                          done[1] = true;
